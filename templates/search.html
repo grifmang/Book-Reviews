@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>YEAR</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for record in result %}
+             <tr>
+                <td>{{ record[0] }}</td>
+                <td><a href="{{ url_for('details', isbn_number=record[0])}}">{{ record[1] }}</a></td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

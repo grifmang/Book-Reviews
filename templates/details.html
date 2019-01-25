@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Details
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col center_stuff">
+    <span class="center_stuff"> <img src="{{ small_image }}"></span>
+    <a href="{{ url_for('post', isbn_number=isbn) }}">Post a review</a>
+  </div>
+  <div class="col">
+    <div class="card center_stuff">
+      <div style="text-align: center;" class="card-header">
+        <h2>{{ title }}</h2>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><u>ISBN</u>: {{ isbn }}</li>
+        <li class="list-group-item"><u>AUTHOR</u>: {{ author }}</li>
+        <li class="list-group-item"><u>YEAR</u>: {{ year }}</li>
+        <li class="list-group-item"><u># OF RATINGS</u>: {{ ratings_count }}</li>
+        <li class="list-group-item"><u>AVERAGE RATING</u>: {{ average_rating }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <p>{{ description }}</p>
+</div>
+<div class="row">
+  <table class="table table-striped table-responsive">
+      <thead>
+          <tr>
+              <th>USER</th>
+              <th>REVIEW</th>
+          </tr>
+      </thead>
+      <tbody>
+           {% for record in review_data %}
+           <tr>
+              <td>{{ record[0] }}</td>
+              <td>{{ record[1] }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+{% endblock %}

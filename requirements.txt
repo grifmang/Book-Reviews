@@ -1,0 +1,8 @@
+Flask
+Flask-Session
+psycopg2
+SQLAlchemy
+requests
+'itsdangerous<1.0.0'
+oauth2
+json

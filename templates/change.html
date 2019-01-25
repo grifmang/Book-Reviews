@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block heading %}
+Change Password
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('change') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="current_password" placeholder="Current Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="new_password" placeholder="New Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="new_password2" placeholder="New Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Reset</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
