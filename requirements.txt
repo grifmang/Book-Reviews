@@ -3,6 +3,5 @@ Flask-Session
 psycopg2
 SQLAlchemy
 requests
-'itsdangerous<1.0.0'
+itsdangerous
 oauth2
-json
