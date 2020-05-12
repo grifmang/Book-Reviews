@@ -27,11 +27,11 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 # API and OAuth Config
-api_key = ''
+api_key = os.getenv("API_KEY")
 consumer = oauth.Consumer(key=api_key,
-                          secret='')
-token = oauth.Token('',
-                    '')
+                          secret=os.getenv("SECRET"))
+token = oauth.Token(os.getenv("CONSUMER"),
+                    os.getenv("OAUTH_SECRET"))
 client = oauth.Client(consumer, token)
 
 @app.route("/")
