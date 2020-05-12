@@ -3,6 +3,7 @@ Flask-Session
 psycopg2
 SQLAlchemy
 requests
+gunicorn
 itsdangerous
 oauth2
 passlib
