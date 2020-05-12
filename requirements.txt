@@ -7,4 +7,3 @@ gunicorn
 itsdangerous
 oauth2
 passlib
-werkzeug
