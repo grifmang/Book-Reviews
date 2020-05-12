@@ -5,3 +5,4 @@ SQLAlchemy
 requests
 itsdangerous
 oauth2
+passlib
